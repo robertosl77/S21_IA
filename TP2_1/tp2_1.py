@@ -1,3 +1,15 @@
+'''
+Inteligencia Artificial - TP2 - Punto 1
+
+Comisión: CATEDRA - A - INF404 - EDH
+Alumno: Roberto Sánchez Leiva
+DNI: 25784362
+Legajo: VINF012641
+Titular Experto: PABLO ALEJANDRO VIRGOLINI
+Titular Disciplinar: MARIA PAULA GONZALEZ
+Fecha de Entrega: 30/09/2024
+'''
+
 # Grafo actualizado según la corrección
 arbol = {
     'B': ['B2', 'B1'],  # Intercambio el orden de B2 por B1 para que vaya por una rama sin solucion.
@@ -32,16 +44,16 @@ def dfs(arbol, inicio, meta, camino=None, explorado=None):
         return True
 
     # Imprimir el estado actual
-    siguiente = arbol[inicio][0] if arbol[inicio] else 'None'
+    siguiente = arbol[inicio][0] if arbol[inicio] else 'Fin de la rama'
     print(f"Paso {paso}: Nodo actual: {inicio}, Nodos explorados: {', '.join(explorado)}, Siguiente nodo: {siguiente}")
     
     # Incrementar paso global después de cada paso
     paso += 1
 
-    for nodo in arbol[inicio]:
-        if nodo not in explorado:
-            result = dfs(arbol, nodo, meta, camino, explorado)
-            if result:  # Si se ha alcanzado el objetivo, detener la búsqueda
+    for nodo in arbol[inicio]:                                      # Recorro el sub-arbol
+        if nodo not in explorado:                                   # valido que el nodo iterado no se haya recorrido anteriormente
+            result = dfs(arbol, nodo, meta, camino, explorado)      # aplico recursividad sobre el metodo
+            if result:                                              # Si se ha alcanzado el objetivo, detener la búsqueda
                 return True
 
     # Si no hay más nodos por explorar, retroceder
