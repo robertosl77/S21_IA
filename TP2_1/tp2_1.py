@@ -61,7 +61,7 @@ def dfs(arbol, inicio, meta, camino=None, explorado=None):
     return False
 
 # Función para ejecutar DFS y generar la tabla de pasos
-def print_dfs_steps():
+def inicio():
     inicio = 'B'
     meta = 'A'
     camino = []
@@ -71,4 +71,4 @@ def print_dfs_steps():
     dfs(arbol, inicio, meta, camino, explorados)
 
 # Ejecutar la función
-print_dfs_steps()
+inicio()
