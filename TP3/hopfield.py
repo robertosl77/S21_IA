@@ -17,10 +17,11 @@ def entrenar_hopfield(patrones):
     return pesos
 
 # Función para limpiar una imagen con ruido utilizando el modelo Hopfield
-def limpiar_hopfield(pesos, imagen_ruido, iteraciones=10):
+def limpiar_hopfield(pesos, imagen_ruido, iteraciones=50):
     """
     Intenta limpiar una imagen ruidosa utilizando los pesos entrenados.
     Itera varias veces para actualizar el estado de la imagen.
+    Las iteraciones son elevadas para tratar de obtener fielmente el circulo
     """
     estado = imagen_ruido.flatten()  # Aplanamos la imagen ruidosa a un vector
 
@@ -46,3 +47,15 @@ def mostrar_matriz(matriz):
     for fila in matriz:
         print(' '.join(['{:2}'.format(int(x)) for x in fila]))
     print("\n")
+
+# Función para convertir -1 y 1 de vuelta a 0 y 1
+def convertir_a_ceros_y_unos(matriz):
+    """
+    Convierte una matriz de -1 y 1 a 0 y 1 para mejor visualización.
+    Parámetro:
+    - matriz: la matriz que contiene valores -1 y 1.
+    
+    Retorna:
+    - La misma matriz con valores convertidos a 0 y 1.
+    """
+    return np.where(matriz == -1, 0, 1)

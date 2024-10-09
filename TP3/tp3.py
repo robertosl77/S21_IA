@@ -12,7 +12,7 @@ Fecha de Entrega: 21/10/2024
 Importante, ejecutar esta clase
 '''
 from constantes import patron1, patron2, patron3, patron4, patron5, imagen_ruido  # Importamos las matrices desde constantes.py
-from hopfield import convertir_a_hopfield_matriz, entrenar_hopfield, mostrar_matriz, limpiar_hopfield
+from hopfield import convertir_a_hopfield_matriz, entrenar_hopfield, mostrar_matriz, limpiar_hopfield, convertir_a_ceros_y_unos
 
 class TP3:
     def __init__(self) -> None:
@@ -44,11 +44,14 @@ class TP3:
         imagen_ruido_hopfield = convertir_a_hopfield_matriz(imagen_ruido)
 
         # Aplicamos el modelo de Hopfield para intentar limpiar la imagen ruidosa
-        imagen_limpia = limpiar_hopfield(pesos_entrenados, imagen_ruido_hopfield)
+        imagen_limpia_hopfield = limpiar_hopfield(pesos_entrenados, imagen_ruido_hopfield)
+        imagen_limpia = convertir_a_ceros_y_unos(imagen_limpia_hopfield)
 
         # Mostramos la imagen después de ser limpiada
         print("Imagen después de limpieza con Hopfield:")
         mostrar_matriz(imagen_limpia)
+
+        
 
 
 
