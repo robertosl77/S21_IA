@@ -2,7 +2,7 @@
 
 import numpy as np
 
-class Constantes:
+class Matrices:
     # 5 matrices de entrenamiento (círculos con pequeños desplazamientos)
     patron1 = np.array([
         [0, 0, 1, 1, 1, 1, 1, 0, 0, 0],

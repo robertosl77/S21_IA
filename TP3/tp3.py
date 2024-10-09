@@ -12,7 +12,7 @@ Fecha de Entrega: 21/10/2024
 Importante, ejecutar esta clase
 '''
 from coordenadas import Coordenadas
-from constantes import Constantes
+from matrices import Matrices
 from hopfield import convertir_a_hopfield_matriz, entrenar_hopfield, mostrar_matriz, limpiar_hopfield, convertir_a_ceros_y_unos
 
 class TP3:
@@ -21,7 +21,7 @@ class TP3:
 
     def ejecuta_proyecto(self): 
         coord = Coordenadas()
-        const = Constantes()
+        const = Matrices()
         #
         const.imprime_patron(1,coord.calcular_centro(const.patron1))
         const.imprime_patron(2,coord.calcular_centro(const.patron2))
