@@ -13,7 +13,7 @@ Importante, ejecutar esta clase
 '''
 from coordenadas import Coordenadas
 from matrices import Matrices
-from hopfield import convertir_a_hopfield_matriz, entrenar_hopfield, mostrar_matriz, limpiar_hopfield, convertir_a_ceros_y_unos
+from hopfield import convertir_a_hopfield, entrenar_hopfield, mostrar_matriz, limpiar_hopfield, convertir_a_matriz
 
 class TP3:
     def __init__(self) -> None:
@@ -30,11 +30,11 @@ class TP3:
         const.imprime_patron(5,coord.calcular_centro(const.patron5))
 
         # Convertimos las matrices de entrenamiento a formato Hopfield (-1 y 1)
-        patron1_hopfield = convertir_a_hopfield_matriz(const.patron1)
-        patron2_hopfield = convertir_a_hopfield_matriz(const.patron2)
-        patron3_hopfield = convertir_a_hopfield_matriz(const.patron3)
-        patron4_hopfield = convertir_a_hopfield_matriz(const.patron4)
-        patron5_hopfield = convertir_a_hopfield_matriz(const.patron5)
+        patron1_hopfield = convertir_a_hopfield(const.patron1)
+        patron2_hopfield = convertir_a_hopfield(const.patron2)
+        patron3_hopfield = convertir_a_hopfield(const.patron3)
+        patron4_hopfield = convertir_a_hopfield(const.patron4)
+        patron5_hopfield = convertir_a_hopfield(const.patron5)
 
         # Entrenamos el modelo de Hopfield con las matrices de entrenamiento
         patrones_entrenamiento = [patron1_hopfield, patron2_hopfield, patron3_hopfield, patron4_hopfield, patron5_hopfield]
@@ -45,11 +45,11 @@ class TP3:
         mostrar_matriz(const.imagen_ruido)
 
         # Convertimos la imagen con ruido al formato Hopfield (-1 y 1)
-        imagen_ruido_hopfield = convertir_a_hopfield_matriz(const.imagen_ruido)
+        imagen_ruido_hopfield = convertir_a_hopfield(const.imagen_ruido)
 
         # Aplicamos el modelo de Hopfield para intentar limpiar la imagen ruidosa
         imagen_limpia_hopfield = limpiar_hopfield(pesos_entrenados, imagen_ruido_hopfield)
-        imagen_limpia = convertir_a_ceros_y_unos(imagen_limpia_hopfield)
+        imagen_limpia = convertir_a_matriz(imagen_limpia_hopfield)
 
         # Mostramos la imagen después de ser limpiada
         print("Imagen después de limpieza con Hopfield:")

@@ -33,7 +33,7 @@ def limpiar_hopfield(pesos, imagen_ruido, iteraciones=50):
     return estado.reshape((10, 10))  # Convertimos de nuevo el vector en matriz 10x10
 
 # Función para convertir una matriz de 0s y 1s a -1 y 1 para Hopfield
-def convertir_a_hopfield_matriz(matriz):
+def convertir_a_hopfield(matriz):
     """
     Convierte una matriz de 0s y 1s a la representación -1 y 1 para el modelo Hopfield.
     """
@@ -49,7 +49,7 @@ def mostrar_matriz(matriz):
     print("\n")
 
 # Función para convertir -1 y 1 de vuelta a 0 y 1
-def convertir_a_ceros_y_unos(matriz):
+def convertir_a_matriz(matriz):
     """
     Convierte una matriz de -1 y 1 a 0 y 1 para mejor visualización.
     Parámetro:
