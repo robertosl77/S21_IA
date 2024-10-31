@@ -19,7 +19,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Cargar imagen
-imagen = cv2.imread("TP4_1/img/img4.jpg", cv2.IMREAD_GRAYSCALE)
+imagen = cv2.imread("TP4_consigna_2/img/img4.jpg", cv2.IMREAD_GRAYSCALE)
 
 # Aplicar detección de bordes con Canny
 bordes = cv2.Canny(imagen, 50, 150, apertureSize=3)
