@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-imagen = cv2.imread("TP4_consigna_3/img/img2.jpg", cv2.IMREAD_GRAYSCALE)
+imagen = cv2.imread("TP4_consigna_3/img/img5.jpg", cv2.IMREAD_GRAYSCALE)
 
 imagen_suavizada = cv2.medianBlur(imagen, 5)
 
